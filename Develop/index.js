@@ -122,6 +122,7 @@ async function run() {
     const answers = await inquirer.prompt(questions);
     console.log(answers);
     console.log(generateReadMeString(answers));
+    await writeToFile('README.md', generateReadMeString(answers));
   } catch (err) {
     console.log(err);
   }
@@ -129,6 +130,7 @@ async function run() {
 
 // Function call to initialize app
 run();
+
 // const a = {
 //   Username: "Joshhawkns",
 //   "Github Repository": "ReadmeGenerator",
