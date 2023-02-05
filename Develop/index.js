@@ -55,6 +55,11 @@ const questions = [
     message: 'Tests?',
     name: 'Tests',
   },
+  {
+    type: 'input',
+    message: 'Type email here!',
+    name: 'Email',
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -71,7 +76,7 @@ function getTitleString(answers) {
 }
 
 function getDescription(answers) {
-  return `## Description\n\n${answers.Description}\n\n`;
+  return `\n\n## Description\n\n${answers.Description}\n\n`;
 }
 
 function getInstall(answers) {
@@ -94,13 +99,17 @@ function tableOfContents() {
   return `## Table of Contents 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contributors](#contributors)
 - [License](#license)\n\n`;
 }
 
 function getLicenseString(answers) {
   if (answers.license === 'none') return '';
-  return `## License\n\n License under the ${answers.license} license`;
+  return `\n\n## License\n\n License under the ${answers.license} license\n\n`;
+}
+
+function email(answers) {
+  return `\n\n## Email\n\n${answers.Email}`;
 }
 
 function generateReadMeString(answers) {
@@ -114,6 +123,7 @@ function generateReadMeString(answers) {
     + credits(answers)
     + getTest(answers)
     + getLicenseString(answers)
+    + email(answers)
   );
 }
 // TODO: Create a function to initialize app
@@ -130,19 +140,3 @@ async function run() {
 
 // Function call to initialize app
 run();
-
-// const a = {
-//   Username: "Joshhawkns",
-//   "Github Repository": "ReadmeGenerator",
-//   Title: "ReadmeGenerator",
-//   Description:
-//     "This is a ReadMe generator I am making for my class at the Unviersity of Richmond",
-//   Installation: "None",
-//   Usage: "Don't mess up the code!",
-//   Contributors: "Joshua Thompso9n",
-//   Tests: "none",
-// };
-
-// console.log(generateReadMeString(a));
-// console.log(tableOfContents());
-// console.log(getLicenseList());

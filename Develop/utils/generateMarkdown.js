@@ -1,8 +1,9 @@
 const licenseList = {
-  "Apache2.0":
-    "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
+  Apache2:
+    '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
 
-  MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  MIT:
+   '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
 };
 
 // TODO: Create a function that returns a license badge based on which license is passed in
@@ -29,8 +30,3 @@ module.exports = getLicenseList;
 function getLicenseList(){
   return Object.keys(licenseList)
 }
-
-
-
-
-
